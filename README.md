@@ -60,9 +60,8 @@ The dataset is widely used in **credit risk research and industry benchmarking**
 ### Weight of Evidence (WoE)
 Categorical variables and binned numerical variables are encoded using WoE to ensure interpretability and monotonic risk behavior.
 
-$$
-WoE = \ln\left(\frac{\% \text{Good Loans}}{\% \text{Bad Loans}}\right)
-$$
+$$WoE = \ln\left(\frac{\% \text{Good Loans}}{\% \text{Bad Loans}}\right)$$
+
 
 **Why WoE?**
 - Linear relationship with log-odds
@@ -74,9 +73,7 @@ $$
 ### Information Value (IV)
 Used to assess predictive power and guide feature selection.
 
-$$
-IV = \sum (\%Good - \%Bad) \times WoE
-$$
+$$IV = \sum (\%Good - \%Bad) \times WoE$$
 
 | IV Range | Predictive Strength |
 |--------|---------------------|
@@ -92,9 +89,7 @@ $$
 - **Input:** WoE-transformed features
 - **Output:** Probability of loan default
 
-\[
-PD = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \dots + \beta_nx_n)}}
-\]
+$$PD = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \dots + \beta_nx_n)}}$$
 
 ### Evaluation Metrics
 - ROC-AUC
@@ -108,9 +103,7 @@ PD = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \dots + \beta_nx_n)}}
 ## Loss Given Default (LGD)
 LGD represents the proportion of exposure that is not recovered after a borrower defaults.
 
-\[
-LGD = 1 - \frac{\text{Total Recoveries}}{\text{Exposure at Default}}
-\]
+$$LGD = 1 - \frac{\text{Total Recoveries}}{\text{Exposure at Default}}$$
 
 Modeled using post-default recovery information available in the Lending Club dataset.
 
@@ -126,9 +119,7 @@ EAD represents the outstanding exposure at the time of default and is derived fr
 
 ## Expected Credit Loss (ECL)
 
-\[
-\boxed{ECL = PD \times LGD \times EAD}
-\]
+$$\boxed{ECL = PD \times LGD \times EAD}$$
 
 - Calculated at **loan level**
 - Aggregated to produce **portfolio-level expected loss**
@@ -141,9 +132,7 @@ EAD represents the outstanding exposure at the time of default and is derived fr
 ### Population Stability Index (PSI)
 Used to detect shifts between training and monitoring datasets.
 
-\[
-PSI = \sum (A - E) \times \ln\left(\frac{A}{E}\right)
-\]
+$$PSI = \sum (A - E) \times \ln\left(\frac{A}{E}\right)$$
 
 | PSI Value | Interpretation |
 |---------|----------------|
