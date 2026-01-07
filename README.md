@@ -60,9 +60,9 @@ The dataset is widely used in **credit risk research and industry benchmarking**
 ### Weight of Evidence (WoE)
 Categorical variables and binned numerical variables are encoded using WoE to ensure interpretability and monotonic risk behavior.
 
-\[
+$$
 WoE = \ln\left(\frac{\% \text{Good Loans}}{\% \text{Bad Loans}}\right)
-\]
+$$
 
 **Why WoE?**
 - Linear relationship with log-odds
@@ -74,9 +74,9 @@ WoE = \ln\left(\frac{\% \text{Good Loans}}{\% \text{Bad Loans}}\right)
 ### Information Value (IV)
 Used to assess predictive power and guide feature selection.
 
-\[
+$$
 IV = \sum (\%Good - \%Bad) \times WoE
-\]
+$$
 
 | IV Range | Predictive Strength |
 |--------|---------------------|
